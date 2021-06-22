@@ -1,4 +1,3 @@
-
 schemaVersion: 2.1.0
 metadata:
   name: golang-echo-example
@@ -16,6 +15,6 @@ components:
       env:
         - name: GOPATH
           value: $(PROJECTS_ROOT)
-       - name: GOCACHE
-         value: /tmp/.cache
+        - name: GOCACHE
+          value: /tmp/.cache
       memoryLimit: 2Gi
