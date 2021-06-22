@@ -1,0 +1,21 @@
+
+schemaVersion: 2.1.0
+metadata:
+  name: golang-echo-example
+attributes:
+  che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
+components:
+  - name: tools
+    container:
+      image: quay.io/eclipse/che-golang-1.14:next
+      endpoints:
+        - exposure: public
+          name: 8080-tcp
+          protocol: http
+          targetPort: 8080
+      env:
+        - name: GOPATH
+          value: $(PROJECTS_ROOT)
+       - name: GOCACHE
+         value: /tmp/.cache
+      memoryLimit: 2Gi
